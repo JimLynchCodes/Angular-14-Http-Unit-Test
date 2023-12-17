@@ -32,8 +32,18 @@ The _DataStuffService_ gets stuff (calls an arbitrary free open api).
 
 The test for the data service checks that the "getStuff" function returns the GET call response (but doesn't ACTUALLY make a http call).
 
+Initially scaffolded with:
+```bash
+npm run ng g s DataStuff
+```
+
 ## Data Stuff Component
 
 The _DataStuffComponent_ injects the _DataStuffService_ and uses it to get data which it then renders on the page as a string. 
 
 The test for the DataStuffComponent uses a mocked version of the DataStuffService that has a "getStuff" function which just returns the hardcoded object `{ response: 'foobar' }`
+
+Scaffolded with:
+```bash
+npm run ng g c DataStuff
+```
