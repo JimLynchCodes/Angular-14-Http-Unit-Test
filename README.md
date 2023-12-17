@@ -2,6 +2,7 @@
 
 An example of an Angular v14 project with a component that injects a service that uses HTTPClient to make a GET request.
 
+
 ## Node Version
 
 Used the latest v18 of node at the time (v18.19.0):
@@ -13,6 +14,7 @@ or if you already have it installed:
 ```bash
 nvm use v18
 ```
+
 
 ## Scaffolding
 
@@ -37,6 +39,7 @@ Initially scaffolded with:
 npm run ng g s DataStuff
 ```
 
+
 ## Data Stuff Component
 
 The _DataStuffComponent_ injects the _DataStuffService_ and uses it to get data which it then renders on the page as a string. 
@@ -47,3 +50,54 @@ Scaffolded with:
 ```bash
 npm run ng g c DataStuff
 ```
+
+
+## Running Unit Tests With Code Coverage
+
+```bash
+npm run test -- --code-coverage
+```
+
+Then open the `index.html` file located at `coverage/angular14-project` in your browser.
+
+Use the report to become aware of where your source code is missing unit tests.
+
+
+## Running Stryker
+
+Then, use it to run stryker's init command.
+```bash
+npm run stryker -- init
+```
+
+Then open the `mutation.html` file located at `reports/mutation/mutation.html` in your browser.
+
+Use the report to become aware of where your unit tests are missing assertions.
+
+
+## How We Installed Stryker (Just FYI 😉)
+
+First, install stryker as a dev dependency:
+```bash
+npm i -D stryker-cli
+```
+
+Then, use it to run stryker's init command.
+```bash
+npm run stryker -- init
+```
+
+Then we answered the questions promts with these answers:
+
+- npm
+
+- angular-cli
+
+- javascript
+
+- npm
+
+
+Extra configuration was made to the generated stryker.config.mjs file:
+
+- added ""!src/main.ts" to the "mutate" list.
