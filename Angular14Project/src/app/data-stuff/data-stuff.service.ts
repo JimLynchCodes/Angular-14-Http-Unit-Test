@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Data } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
+import { Stuff } from './data-stuff.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class DataStuffService {
   
   constructor(private httpClient: HttpClient) { }
   
-  getStuff(): Promise<String> {
+  getStuff(): Promise<Stuff> {
        return firstValueFrom(this.httpClient.get<any>('https://dummyjson.com/products/1'));
   }
 }

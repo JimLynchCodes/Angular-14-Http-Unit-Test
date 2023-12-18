@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Stuff } from './data-stuff.model';
+import { DataStuffService } from './data-stuff.service';
+import { placeholderStuff } from './data-stuff.placeholder';
 
 @Component({
   selector: 'app-data-stuff',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataStuffComponent implements OnInit {
 
-  constructor() { }
+  gotData: boolean = false;
+  stuff: Stuff = placeholderStuff;
 
-  ngOnInit(): void {
+  constructor(private stuffService: DataStuffService) { }
+
+  async ngOnInit(): Promise<void> {
+    this.stuff = await this.stuffService.getStuff();
+    this.gotData = true;
   }
 
 }

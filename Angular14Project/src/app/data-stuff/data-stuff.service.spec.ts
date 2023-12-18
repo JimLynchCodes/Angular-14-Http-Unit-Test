@@ -6,8 +6,8 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 // Other imports
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Data } from '@angular/router';
+import { mockStuff } from './data-stuff.mock';
 
-const mockStuff = JSON.stringify({ mock: 'stuff' });
 
 describe('DataStuffService', () => {
   let service: DataStuffService;
@@ -42,6 +42,12 @@ describe('DataStuffService', () => {
     //4
     req.flush(mockStuff);
   });
+
+  it('should return and error when http request fails', () => {
+
+
+
+  })
 
   afterEach(() => {
     // After every test, assert that there are no more pending requests.

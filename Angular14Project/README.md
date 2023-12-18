@@ -28,6 +28,23 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 
+## Unit Tests Watch Mode
+
+Run `npm run test:watch` to run ng test with the `--watch` flag.
+
+## Unit Tests With Code Coverage
+
+Run `npm run test:cov` to run ng test with the `--coverage` flag.
+
+Read the coverage report by opening the generated `coverage/index.html` file in the browser.
+
+## Unit Tests With Mutation Testing
+
+Run `npm run test:mut` to run stryker mutation testing.
+
+Read the coverage report by opening the generated `mutation-report/index.html` file in the browser.
+
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
